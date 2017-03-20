@@ -17,9 +17,9 @@ public class DataLogger implements CommandLineRunner {
 	
 	private CustomerRepository customerRepo;
 
-	private CustomerOrderRepository orderRepo;
+	private OrderRepository orderRepo;
 	
-	public DataLogger(CustomerRepository customerRepo, CustomerOrderRepository orderRepo) {
+	public DataLogger(CustomerRepository customerRepo, OrderRepository orderRepo) {
 		this.customerRepo = customerRepo;
 		this.orderRepo = orderRepo;
 	}

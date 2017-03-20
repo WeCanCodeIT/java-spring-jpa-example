@@ -1,0 +1,14 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Order Details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Order Details</h1>
+    <p th:text="'toString yields ' + ${customerOrder}" />
+    <p th:text="'Class: ' + ${customerOrder.class}" />
+    <p th:text="'PO #: ' + ${customerOrder.purchaseOrderNumber}" />
+    <p>This is an order for <span th:text="${customerOrder.customer.fullName}" />. To build a url for customer details, I would use its id, which is <span th:text="${customerOrder.customer.id}" />.</p>
+</body>
+</html>

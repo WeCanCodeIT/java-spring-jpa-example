@@ -67,4 +67,11 @@ public class Customer {
 		return orders;
 	}
 
+	public String buildFullName() {
+		return firstName + " " + lastName;
+	}
+	
+	public String getFullName() {
+		return firstName + " " + lastName;
+	}
 }

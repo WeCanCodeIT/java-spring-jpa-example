@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Spring MVC-fu</h1>
+    <p th:text="${customersAttribute}" />
+    <p th:text="'Class: ' + ${customersAttribute.class}" />
+    <ul th:each="customer: ${customersAttribute}">
+    	<li>
+    		<ul>
+	    		<li>Class: <span th:text="${customer.class}" /></li>
+	    		<li>Name: <span th:text="${customer.firstName} + ' ' + ${customer.lastName}" /></li>
+	    		<li th:text="'Name (with build method): ' + ${customer.buildFullName()}" />
+	    		<li th:text="'Name (with get method): ' + ${customer.fullName}" />
+	    		<li th:each="order: ${customer.orders}">
+	    			<span th:text="'Order\'s class: ' + ${order.class} + ', purchase order number: '" />
+	    			<a th:href="'/order?id=' + ${order.id}" th:text="${order.purchaseOrderNumber}" />
+	    			 - using @ syntax (the right way) - <a th:href="@{/order(id=${order.id})}" th:text="${order.purchaseOrderNumber}"  />
+	    		</li>
+    		</ul>
+    	</li>
+    </ul>
+</body>
+</html>

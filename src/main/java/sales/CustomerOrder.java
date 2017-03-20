@@ -20,17 +20,21 @@ public class CustomerOrder {
 	@ManyToOne
 	private Customer customer;
 
-	private String orderNumber;
+	private String purchaseOrderNumber;
 
 	private CustomerOrder() {
 	}
 
 	public CustomerOrder(String orderNumber) {
-		this.orderNumber = orderNumber;
+		this.purchaseOrderNumber = orderNumber;
 	}
 
-	public String getOrderNumber() {
-		return orderNumber;
+	public long getId() {
+		return id;
+	}
+	
+	public String getPurchaseOrderNumber() {
+		return purchaseOrderNumber;
 	}
 
 	public Customer getCustomer() {
@@ -39,6 +43,6 @@ public class CustomerOrder {
 	
 	@Override
 	public String toString() {
-		return "Order# " + orderNumber;
+		return "PO# " + purchaseOrderNumber;
 	}
 }
